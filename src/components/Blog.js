@@ -9,7 +9,7 @@ const Blog = () => {
       {data.map((item, index) => {
         return (
           <Card style={{margin: 10}} key={index}>
-            <Card.Cover source={{uri: 'https://picsum.photos/700'}}/>
+            <Card.Cover source={{uri: `https://picsum.photos/700?random=${index + 1}`}}/>
             <Card.Content>
               <Title style={{ marginTop: 15 }}>Card title {index + 1}</Title>
               <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis ipsum nec turpis dictum
