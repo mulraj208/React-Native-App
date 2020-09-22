@@ -6,10 +6,11 @@ import App from './src/index';
 
 const theme = {
   ...DefaultTheme,
+  roundness: 2,
   colors: {
     ...DefaultTheme.colors,
-    primary: 'tomato',
-    accent: 'yellow',
+    primary: '#457b9d',
+    accent: '#e63946',
   },
 };
 
