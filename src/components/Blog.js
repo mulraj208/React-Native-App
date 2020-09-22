@@ -4,6 +4,7 @@ import {Button, Card, Title, Paragraph} from 'react-native-paper';
 
 const Blog = () => {
   const data = [...Array(10).keys()];
+
   return (
     <ScrollView>
       {data.map((item, index) => {
