@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {BottomNavigation, Text} from 'react-native-paper';
+import {BottomNavigation} from 'react-native-paper';
 import Blog from "./Blog";
 import Notifications from "./Notifications";
 
-const ButtonNavigation = () => {
+const Home = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {key: 'blog', title: 'Blog', icon: 'blogger'},
@@ -24,4 +24,4 @@ const ButtonNavigation = () => {
   );
 };
 
-export default ButtonNavigation;
+export default Home;

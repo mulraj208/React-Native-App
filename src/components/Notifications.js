@@ -3,7 +3,7 @@ import {Text} from "react-native-paper";
 
 const Notifications = () => {
   return (
-    <Text>Notification</Text>
+    <Text style={{ margin: 15 }}>Notification Tab. Work in Progress.</Text>
   )
 };
 
