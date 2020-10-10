@@ -13,6 +13,7 @@
     "@react-navigation/native": "^5.7.4",
     "@react-navigation/stack": "^5.9.1",
     "expo": "~38.0.8",
+    "expo-av": "~8.2.1",
     "expo-cli": "^3.27.8",
     "expo-constants": "^9.1.1",
     "expo-notifications": "^0.3.3",

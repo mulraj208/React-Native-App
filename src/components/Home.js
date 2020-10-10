@@ -109,12 +109,12 @@ const Home = () => {
   return (
     <>
       <Blog/>
-      <Button
-        title="Press to Send Notification"
-        onPress={async () => {
-          await sendPushNotification(expoPushToken);
-        }}
-      />
+      {/*<Button*/}
+      {/*  title="Press to Send Notification"*/}
+      {/*  onPress={async () => {*/}
+      {/*    await sendPushNotification(expoPushToken);*/}
+      {/*  }}*/}
+      {/*/>*/}
     </>
   );
 };
