@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "crown-flag-app",
+    "name": "Crown Flag",
     "slug": "crown-flag-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,6 +23,7 @@
       "favicon": "./assets/favicon.png"
     },
     "android": {
+      "useNextNotificationsApi": true,
       "package": "com.mulrajgupta208.crownflagapp"
     }
   }
