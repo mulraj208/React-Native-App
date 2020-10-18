@@ -66,7 +66,7 @@ async function sendPushNotification(expoPushToken) {
     sound: 'default',
     title: 'Original Title',
     body: 'And here is the body!',
-    data: {data: 'goes here'},
+    data: {postId: 2},
   };
 
   await fetch('https://exp.host/--/api/v2/push/send', {
@@ -118,8 +118,8 @@ const Home = () => {
   useEffect(() => {
     registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
 
-    const subscription = Notifications.addNotificationResponseReceivedListener(notification => {
-      const postId = 2;
+    const subscription = Notifications.addNotificationResponseReceivedListener(response => {
+      const postId = response.notification.request.content.data.postId;
       const post = data.find(item => item.postId === postId);
       navigation.navigate("Post", {postId: 2, post});
     });
