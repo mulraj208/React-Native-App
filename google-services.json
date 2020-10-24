@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "949987223066",
+    "firebase_url": "https://crown-flag.firebaseio.com",
+    "project_id": "crown-flag",
+    "storage_bucket": "crown-flag.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949987223066:android:6da42bbfc8da4fc869d3a3",
+        "android_client_info": {
+          "package_name": "com.mulrajgupta208.crownflagapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949987223066-gdno6i65ic69hb741asc75ej7bm2u019.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEtfjlqzWcYlWKW0rYg1EOWFl-e1VjcNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949987223066-gdno6i65ic69hb741asc75ej7bm2u019.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

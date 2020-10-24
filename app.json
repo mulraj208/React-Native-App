@@ -24,6 +24,7 @@
     },
     "android": {
       "useNextNotificationsApi": true,
+      "googleServicesFile": "./google-services.json",
       "package": "com.mulrajgupta208.crownflagapp"
     }
   }
