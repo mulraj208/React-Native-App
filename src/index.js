@@ -8,7 +8,7 @@ import Post from "./components/Post";
 
 const Stack = createStackNavigator();
 
-export default function App() {
+export default function App({data}) {
   return (
     <>
       <NavigationContainer>
@@ -17,7 +17,9 @@ export default function App() {
           screenOptions={{
             header: (props) => <AppBar {...props} />,
           }}>
-          <Stack.Screen name="Home" component={Home}/>
+          <Stack.Screen name="Home">
+            {props => <Home {...props} data={data} />}
+          </Stack.Screen>
           <Stack.Screen name="Post" component={Post}/>
         </Stack.Navigator>
       </NavigationContainer>

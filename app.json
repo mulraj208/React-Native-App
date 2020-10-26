@@ -17,6 +17,9 @@
       "**/*"
     ],
     "ios": {
+      "infoPlist": {
+        "UIBackgroundModes": ["location", "fetch"]
+      },
       "supportsTablet": true
     },
     "web": {
