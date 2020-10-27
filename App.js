@@ -5,10 +5,14 @@ import * as BackgroundFetch from "expo-background-fetch";
 import * as TaskManager from "expo-task-manager";
 import {AppRegistry} from 'react-native';
 import Constants from "expo-constants";
-import {useNavigation} from '@react-navigation/native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
+import {createStackNavigator} from '@react-navigation/stack';
+import 'react-native-gesture-handler';
 import {name as appName} from './app.json';
-import App from './src/index';
+import AppBar from "./src/components/AppBar";
+import Home from "./src/components/Home";
+import Post from "./src/components/Post";
 
 const NOTIFICATION_TASK = 'NOTIFICATION_TASK';
 
@@ -167,6 +171,14 @@ async function registerForPushNotificationsAsync() {
   return token;
 }
 
+const Stack = createStackNavigator();
+
+const navigationRef = React.createRef();
+
+function navigate(name, params) {
+  navigationRef.current && navigationRef.current.navigate(name, params);
+}
+
 export default function Main() {
   const [expoPushToken, setExpoPushToken] = React.useState('');
   // const navigation = useNavigation();
@@ -177,8 +189,8 @@ export default function Main() {
     const subscription = Notifications.addNotificationResponseReceivedListener(response => {
       const postId = response.notification.request.content.data.postId;
       console.log('postId', postId);
-      // const post = data.find(item => item.postId === postId);
-      // navigation.navigate("Post", {postId: 2, post});
+      const post = data.find(item => item.postId === postId);
+      navigate("Post", {postId: 2, post});
     });
 
     return () => {
@@ -188,7 +200,18 @@ export default function Main() {
 
   return (
     <PaperProvider theme={theme}>
-      <App data={data} />
+      <NavigationContainer ref={navigationRef}>
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            header: (props) => <AppBar {...props} />,
+          }}>
+          <Stack.Screen name="Home">
+            {props => <Home {...props} data={data}/>}
+          </Stack.Screen>
+          <Stack.Screen name="Post" component={Post}/>
+        </Stack.Navigator>
+      </NavigationContainer>
     </PaperProvider>
   );
 }
